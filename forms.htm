@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Demo</title>
+
+    <style>
+        table {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h5>Registration Form</h5>
+    <form name="myform" onsubmit="validate()">
+
+        <table>
+            <tr>
+                <td> First Name : </td>
+                <td> <input type="text" name="fn" placeholder="first name should be entered" required></td>
+            </tr>
+
+            <tr>
+                <td> Last Name : </td>
+                <td> <input type="text" name="ln" required></td>
+            </tr>
+
+            <tr>
+                <td>Your Email : </td>
+                <td><input type="email" name="em" required></td>
+            </tr>
+
+            <tr>
+                <td> Mobile : </td>
+                <td><input type="number" name="mob" id="mob"></td>
+            </tr>
+
+            <tr>
+                <td>Gender :</td>
+                <td> <input type="radio" name="abc">Male
+                    <input type="radio" name="abc">Female
+                    <input type="radio" name="abc">other
+                </td>
+            </tr>
+
+            <tr>
+                <td><button type="submit">Submit the Form</button></td>
+                <td><button type="reset">Reset the Form</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validate() {
+            let first = document.forms['myform']['fn'].value;
+            let last = document.forms['myform']['ln'].value;
+            let email = document.forms['myform']['em'].value;
+
+            if (first == '' || last == '' || email == '')
+                alert('FirstName or LastName or Email is Empty!');
+            else
+                alert('Here is your full Name : ' + first + '  ' + last+ ' and Email : '+email);
+        }
+    </script>
+</body>
+</html>
